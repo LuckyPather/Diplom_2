@@ -25,8 +25,8 @@ class User:
             response = requests.post(f"{URL.BASE}{URL.LOGIN_USER}", json=data)
         return response.status_code, response.json()
 
-    def change_user(self, email, password, login, new_email, new_name, login_status=True):
-        access_token = self.create_user(email, password, login)[1]['accessToken']
+    def change_user(self, access_token, email, password, new_email, new_name, login_status=True):
+        access_token = access_token
 
         if login_status is False:
             access_token = ""

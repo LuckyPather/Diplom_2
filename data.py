@@ -5,7 +5,7 @@ class URL:
     LOGIN_USER = '/auth/login'
     CHANGE_USER = '/auth/user'
     # Order
-    CREATE_ORDER = '/api/orders'
+    CREATE_ORDER = '/orders'
 
 
 class DataUser:
@@ -18,7 +18,11 @@ class DataUser:
     # TestLoginUser
     RESULT_MESSAGE_WRONG_LOGIN = "email or password are incorrect"
     # TestChangeDataUser
-    RESULT_MESSAGE_CHANGE_USER_UNAUTHORIZED = "You should be authorised"
+    RESULT_MESSAGE_USER_UNAUTHORIZED = "You should be authorised"
+
+    CASE_CREATE_USER = {1: "Создание пользователя без указания поля - Пароль",
+                        2: "Создание пользователя без указания поля - Имя и Пароль"
+                        }
 
 
 class DataOrder:
@@ -39,3 +43,13 @@ class DataOrder:
         "Мини-салат Экзо-Плантаго": "61c0c5a71d1f82001bdaaa79",
         "Сыр с астероидной плесенью": "61c0c5a71d1f82001bdaaa7a",
     }
+
+    RESULT_MESSAGE_UPSET_INGREDIENTS = 'Ingredient ids must be provided'
+
+    CASE_CREATE = {1: "Создание заказа с авторизацией",
+                   2: "Создание заказа без авторизации",
+                   3: "Создание заказов без ингредиентов",
+                   4: "Создание заказов с неверным хэшом ингредиентов"}
+
+    CASE_GET = {1: "Получение заказа авторизированным пользователем",
+                2: "Получение заказа без авторизации"}
